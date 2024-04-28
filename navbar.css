@@ -97,3 +97,65 @@ padding: 15px;
     color:white;
     font-weight: 400;
 }
+
+<!-- Login and Signup css -->
+.container{
+    display: flex;
+    justify-content: center;
+    background-image: url(WhatsApp\ Image\ 2024-04-27\ at\ 3.29.11\ AM.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    align-items: center;
+}
+.form{
+    background-color: rgba(0, 1, 0, 0.5);
+    height: 70vh;
+    width: 70vh;
+    border-radius: 20px;
+}
+.links {
+    text-align: center;
+    margin: 30px;
+}
+.inputs{
+    position: relative;
+}
+
+input[type=text], input[type=password], input[type=email], input[type=submit] {
+    width: 90%;
+    padding: 12px;
+    margin: 15px;
+    border: 1px solid #ccc;
+    color : green;
+}
+input[type=submit]{
+    width: 95%;
+    cursor: pointer;
+}
+input[type=checkbox]{
+    margin: 16px ;
+}
+
+input[type=text], input[type=password], input[type=email], input[type=submit]{
+    border: 1px solid black;
+    box-shadow: black;
+    border-radius: 10px;
+}
+.inputs span{
+    color: white;
+}
+.links a{
+    padding: 10px 50px;
+    margin: 30px;
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+    transition: background-color 0.5s;
+}
+.active{
+    background-color: red;
+}
+.links a:hover{
+    background-color: red;
+}
