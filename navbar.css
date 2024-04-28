@@ -96,6 +96,18 @@ padding: 15px;
     background-color:red ;
     color:white;
     font-weight: 400;
+    display: block;
+    width: 145px;
+}
+.heading{
+    text-align: center;
+}
+.heading span{
+    font-weight: 500;
+    color: black;
+}
+.heading h2{
+    color: red;
 }
 
 <!-- Login and Signup css -->
