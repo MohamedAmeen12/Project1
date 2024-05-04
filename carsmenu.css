@@ -1,0 +1,54 @@
+.cars-menu{
+    padding:112px 0 120px;
+}
+.cars-menu-content .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.cars-menu-content .Cars-Collage {
+  flex-basis: calc(50% - 20px); /* Adjust the width and spacing as needed */
+  margin-bottom: 20px; /* Adjust the spacing between cars */
+}
+
+.cars-menu-content{padding-top:96px;}
+
+.single-car-image-box{
+    border: 1px solid #dadfe9;
+}
+.car-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 30px;
+    height: 220px;
+    border-bottom: 1px solid #dadfe9;
+}
+.car-model-info{padding:12px 7px;}
+.car-model-info p {
+    font-size: 12px;
+    color: #8c92a0;
+    text-transform: capitalize;
+}
+img{border:none;max-width:100%; height:auto;}
+ul{
+	padding: 0;
+    margin: 0 auto;
+    list-style: none;
+}.section-header{
+    position: relative;
+    text-align: center;
+}
+h2{
+    color: gray;
+}
+h3
+{
+    color: gray;
+}
+p{
+    color: gray;
+}
+
+
