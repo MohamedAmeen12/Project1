@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honda Civic Page</title>
+    <link rel="stylesheet" href="car.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Honda Civic</h1>
+            <div class="buttons">
+                <button onclick="scrollToSection('info')">Info</button>
+                <button onclick="scrollToSection('gallery')">Gallery</button>
+                <button onclick="scrollToSection('purchase')">Purchase</button>
+            </div>
+        </div>
+    </header>
+    
+    <section id="info">
+        <div class="section-content">
+            <img src="honda1.jpg" alt="Honda Civic">
+            <p>Explore the all-new Honda Civic with enhanced features and sleek design.</p>
+        </div>
+    </section>
+    
+    <section id="gallery">
+        <div class="section-content">
+            <div class="gallery-buttons">
+                <button onclick="showSection('interior')">Interior</button>
+                <button onclick="showSection('exterior')">Exterior</button>
+            </div>
+            <div id="interior" class="gallery-section" style="display: none;">
+              
+                <img src="2022-honda-accord-sport-interior.jpg" alt="Honda Civic Interior">
+               <img src="2022-honda-accord-sport-interior (1).jpg" alt="Honda Civic Interior">
+                <img src="2022-honda-accord-sport-interior (2).jpg" alt="Honda Civic Interior">
+            </div>
+            <div id="exterior" class="gallery-section" style="display: none;">
+                
+                <img src="2022-honda-accord-sport-exterior.jpg" alt="Honda Civic Exterior">
+                <img src="2022-honda-accord-sport-exterior (1).jpg" alt="Honda Civic Exterior">
+                <img src="2022-honda-accord-sport-exterior (3).jpg" alt="Honda Civic Exterior">
+          </div>
+        
+        </div>
+    </section>
+    
+    <section id="purchase">
+        <div class="section-content">
+            <button onclick="showPopup('cash')">Pay by Cash</button>
+            <button onclick="showPopup('buy')">Buy Now</button>
+        </div>
+    </section>
+
+    <div id="cashPopup" class="popup">
+       
+        <p>Complete your purchase with cash. Contact us for further details.</p>
+    </div>
+
+    <div id="buyPopup" class="popup">
+       
+        <p>Enter your payment code.</p>
+    </div>
+
+    <script src="car.js"></script>
+</body>
+</html>
