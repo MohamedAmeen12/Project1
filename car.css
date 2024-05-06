@@ -5,14 +5,21 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
     color: #333;
+    padding-top: 80px;
 }
 
+
 header {
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    left: 0; 
+    z-index: 1000;
     background-color: #004a99; 
-    color: #ffffff;
-    padding: 20px 0;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    padding: 20px 0; 
+    text-align: center; 
+    color: white; 
 }
 
 .header-content {
@@ -53,8 +60,10 @@ section {
 
 section img {
     max-width: 90%;
-    height: auto;
     padding: 20px;
+    width: 500px; 
+    height: 300px; 
+    object-fit: cover;
 }
 
 .gallery-buttons button {
@@ -83,4 +92,68 @@ section img {
 .popup p {
     color: #333;
     font-size: 16px;
+}
+
+#info img {
+    width: 800px; 
+    height: 450px; 
+    margin: 20px auto; 
+    display: block; 
+    border-radius: 8px; 
+}
+
+.table-container {
+    margin: 20px;
+    padding: 20px;
+    background: #f9f9f9; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.table-container h3 {
+    color: #004a99;
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; 
+    margin-bottom: 20px; 
+}
+
+th, td {
+    text-align: left;
+    padding: 8px; 
+    border-bottom: 1px solid #ddd; 
+}
+
+th {
+    background-color: #004a99;
+    color: white;
+    font-weight: bold;
+}
+
+td {
+    background-color: #ffffff;
+    color: #666;
+}
+
+table tr:last-child th,
+table tr:last-child td {
+    border-bottom: none;
+}
+
+#info .info-title {
+    font-size: 28px; 
+    color: #004a99; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    text-shadow: 1px 1px 2px #aaa; 
+}
+
+#info .info-description {
+    font-style: italic; 
+    color: #666; 
+    font-size: 16px; 
+    margin-top: 10px; 
 }
