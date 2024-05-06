@@ -12,10 +12,10 @@ function displayUsers() {
   tableBody.innerHTML = '';
   users.forEach(user => {
     const row = document.createElement('tr');
-    row.innerHTML = `<td>${user.id}</td><td>${user.name}</td><td>${user.email}</td><td>
-        <button class="actionButton" onclick="editUser(${user.id})">Edit</button>
-        <button class="actionButton" onclick="deleteUser(${user.id})">Delete</button>
-      </td>`;
+   row.innerHTML = '<td>' + user.id + '</td><td>' + user.name + '</td><td>' + user.email + '</td><td>' +
+    '<button class="actionButton" onclick="editUser(' + user.id + ')">Edit</button>' +
+    '<button class="actionButton" onclick="deleteUser(' + user.id + ')">Delete</button>' +
+  '</td>';
     tableBody.appendChild(row);
   });
 }
