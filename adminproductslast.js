@@ -55,8 +55,8 @@ function deleteTable(tableId) {
         table.parentNode.removeChild(table);
         
         // Remove the corresponding buttons
-        const addButton = document.getElementById(add-button-${tableId});
-        const deleteButton = document.getElementById(delete-button-${tableId});
+        const addButton = document.getElementById(add-button-$,{tableId});
+        const deleteButton = document.getElementById(delete-button-$,{tableId});
         if (addButton) {
             addButton.parentNode.removeChild(addButton);
         }
@@ -91,24 +91,8 @@ function createTableWithProducts(tableName, products) {
                 </tr>
             `).join('')}
         </tbody>
-    `;
-    const addButton = document.createElement("button");
-    addButton.textContent = "Add Product";
-    addButton.id = `add-button-${tableId}`;
-    addButton.onclick = function() {
-        addProduct(tableId);
-    };
-    const deleteButton = document.createElement("button");
-    deleteButton.textContent = "Delete Table";
-    deleteButton.id = `delete-button-${tableId}`;
-    deleteButton.onclick = function() {
-        deleteTable(tableId);
-    };
-    container.appendChild(table);
-    container.appendChild(addButton);
-    container.appendChild(deleteButton);
-    tableCounter++;
-}
+    `};
+   
     const addButton = document.createElement("button");
     addButton.textContent = "Add Product";
     addButton.onclick = function() {
@@ -145,4 +129,5 @@ function createTableWithProducts(tableName, products) {
             { name: "MG GT", price: "32,350" },
             { name: "MG HS", price: "27,000" }
         ]);
-    };
+    }
+;
