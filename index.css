@@ -128,7 +128,7 @@ body {
     margin-right: 10px;
 }
 
-.form-control input[type="checkbox"] {
+.form-control input[type="radio"] {
     margin-right: 80px;
 }
 
