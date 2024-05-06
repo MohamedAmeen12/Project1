@@ -1,14 +1,5 @@
 
 
-function showGalleryPhotos() {
-    const gallerySection = document.querySelector('.gallery-section:visible');
-    const imageElement = gallerySection.querySelector('img'); 
-
-    if (imageElement) { 
-        imageElement.src = currentPhotos[currentPhotoIndex]; 
-        imageElement.alt = 'Gallery Photo'; 
-    }
-}
 
 
 function showPopup(type) {
@@ -52,4 +43,4 @@ function showSection(sectionId) {
     currentPhotos = sectionId === 'interior' ? interiorPhotos : exteriorPhotos; 
     currentPhotoIndex = 0; 
     showGalleryPhotos();
-}
+} 
