@@ -1,0 +1,125 @@
+nav{
+  background-color:grey;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px;
+  }
+  
+  .logo{
+      font-size: 30px;
+      font-weight: 900;
+  }
+  .logo a{
+      text-decoration: none;
+      font-size: 20px;
+      color: black;
+  }
+  
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.actionButton {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.actionButton:hover {
+  background-color: #45a049;
+}
+
+.actionButton:active {
+  background-color: #3e8e41;
+}
+
+
+footer{
+  background: grey;
+  padding-top: 50px;
+}
+.cont{
+  width:1140px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.footer_content{
+  width: 33.3%;
+}
+h3{
+  font-size: 28px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.footer_content p{
+width: 190px;
+margin: auto;
+padding: 7px;
+}
+.footer_content ul{
+text-align: center;
+}
+.list{
+  padding: 0;
+  
+}
+.list li{
+  width: auto;
+  text-align: center;
+  list-style-type: none;
+  padding: 7px;
+  position: relative;
+}
+
+.social-icons{
+  text-align: center;
+}
+.social-icons li{
+display: inline-block;
+text-align: center;
+padding: 5px;
+}
+.social-icons i{
+  color: white;
+  font-size: 25px;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+a:hover{
+  color: red;
+}
