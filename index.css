@@ -118,6 +118,19 @@ body {
 	width: 100%;
 	cursor: pointer;
 }
+.form-control {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-control label {
+    margin-right: 10px;
+}
+
+.form-control input[type="checkbox"] {
+    margin-right: 80px;
+}
 
 
 a{
