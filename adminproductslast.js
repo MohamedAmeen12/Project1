@@ -65,3 +65,84 @@ function deleteTable(tableId) {
         }
     }
 }
+function createTableWithProducts(tableName, products) {
+    const container = document.getElementById("tables-container");
+    const tableId = `table${tableCounter}`;
+    const table = document.createElement("table");
+    table.id = tableId;
+    table.innerHTML = `
+        <caption>${tableName}</caption>
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            ${products.map(product => `
+                <tr>
+                    <td>${product.name}</td>
+                    <td>$${product.price}</td>
+                    <td>
+                        <a href="#" class="edit-button" onclick="editProduct(this)">Edit</a>
+                        <a href="#" class="delete-button" onclick="deleteProduct(this)">Delete</a>
+                    </td>
+                </tr>
+            `).join('')}
+        </tbody>
+    `;
+    const addButton = document.createElement("button");
+    addButton.textContent = "Add Product";
+    addButton.id = `add-button-${tableId}`;
+    addButton.onclick = function() {
+        addProduct(tableId);
+    };
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete Table";
+    deleteButton.id = `delete-button-${tableId}`;
+    deleteButton.onclick = function() {
+        deleteTable(tableId);
+    };
+    container.appendChild(table);
+    container.appendChild(addButton);
+    container.appendChild(deleteButton);
+    tableCounter++;
+}
+    const addButton = document.createElement("button");
+    addButton.textContent = "Add Product";
+    addButton.onclick = function() {
+        addProduct(tableId);
+    };
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete Table";
+    deleteButton.onclick = function() {
+        deleteTable(tableId);
+    };
+    container.appendChild(table);
+    container.appendChild(addButton);
+    container.appendChild(deleteButton);
+    tableCounter++;
+
+    window.onload = function() {
+        createTableWithProducts("Porsche", [
+            { name: "Porsche 911 GT3", price: "250,000" },
+            { name: "Porsche 992 Turbo S", price: "259,855" },
+            { name: "Porsche Carrera GT", price: "600,000" },
+            { name: "Porsche Cayenne", price: "80,000" }
+        ]);
+        
+        createTableWithProducts("Honda", [
+            { name: "Civic", price: "36,786" },
+            { name: "Accord", price: "48,795" },
+            { name: "Honda C-rv", price: "33,350" },
+            { name: "City", price: "22,330" }
+        ]);
+    
+        createTableWithProducts("MG", [
+            { name: "MG5", price: "30,995" },
+            { name: "MG6", price: "34,283" },
+            { name: "MG GT", price: "32,350" },
+            { name: "MG HS", price: "27,000" }
+        ]);
+    };
