@@ -41,6 +41,5 @@ function showSection(sectionId) {
     section.style.display = 'block';
     section.classList.add('visible'); 
     currentPhotos = sectionId === 'interior' ? interiorPhotos : exteriorPhotos; 
-    currentPhotoIndex = 0; 
-    showGalleryPhotos();
+    
 } 
