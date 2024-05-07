@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Car Purchase</title>
+  <link rel="stylesheet" type="text/css" href="CarPurchase.css">
+</head>
+<body>
+  <h1>Car Purchase</h1>
+  
+  <form id="carForm" action="submit_order.php" method="POST">
+    
+    <fieldset>
+      <legend>Shipping Address</legend>
+      <label for="country">Country:</label>
+      <input type="text" id="country" name="country" required>
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city" required>
+      <label for="state">State:</label>
+      <input type="text" id="state" name="state" required>
+      <label for="street">Street Address:</label>
+      <input type="text" id="street" name="street" required>
+      <label for="postal_code">Postal Code:</label>
+      <input type="text" id="postal_code" name="postal_code" required>
+    </fieldset>
+    
+    <fieldset>
+        <legend>Car Color:</legend>
+        <div class="color-options">
+          <label>
+            <input type="radio" name="color" value="red" onchange="selectColor(this.value)">
+            <span class="color-circle red"></span>
+          </label>
+          <label>
+            <input type="radio" name="color" value="blue" onchange="selectColor(this.value)">
+            <span class="color-circle blue"></span>
+          </label>
+          <label>
+            <input type="radio" name="color" value="white" onchange="selectColor(this.value)">
+            <span class="color-circle white"></span>
+          </label>
+          <label>
+            <input type="radio" name="color" value="black" onchange="selectColor(this.value)">
+            <span class="color-circle black"></span>
+          </label>
+          <label>
+            <input type="radio" name="color" value="silver" onchange="selectColor(this.value)">
+            <span class="color-circle silver"></span>
+          </label>
+        </div>
+      </fieldset>
+    <!-- Products Section -->
+    <div class="products-section">
+      <h2>Products</h2>
+      <div class="product-item">
+        <img src="mg5.jpg" alt="MG 5">
+        <div class="product-details">
+          <h3>MG 5</h3>
+          <p>A compact sedan with advanced features.</p>
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- Payment Section -->
+    <fieldset>
+      <legend>Payment</legend>
+      <label><input type="radio" name="payment" value="cash" required onclick="updatePrice()"> Cash</label><br>
+      <label><input type="radio" name="payment" value="installments" onclick="updatePrice()"> Installments</label><br>
+      <div id="installments" style="display: none;">
+        <label><input type="radio" name="installment" value="6" onclick="selectInstallment()"> 6 months (20% extra)</label><br>
+<label><input type="radio" name="installment" value="12" onclick="selectInstallment()"> 12 months (35% extra)</label><br>
+      </div>
+    </fieldset>
+
+    <!-- Price Section -->
+    <div id="priceSection" style="display: none;">
+      <h2>Price</h2>
+      <p id="totalPrice"></p>
+      <p id="monthlyInstallment"></p>
+    </div>
+    
+    <button type="submit">Pay now</button>
+  </form>
+
+  <script src="CarPurchase.js"></script>
+</body>
+</html>
