@@ -1,17 +1,13 @@
 window.onload = function() {
-
     updatePrice();
 };
 
 function calculateInstallmentPrice(installmentMonths, extraRate) {
     var originalPrice = 30995; 
     
-    
     var totalPrice = originalPrice * (1 + extraRate);
-  
-   
     var monthlyInstallment = totalPrice / installmentMonths;
-  
+
     return {
         totalPrice: totalPrice.toFixed(2),
         monthlyInstallment: monthlyInstallment.toFixed(2)
@@ -72,10 +68,8 @@ function selectInstallment() {
     regularPrice.textContent = 'Total Price with Installments: $' + priceDetails.totalPrice;
     monthlyInstallment.textContent = 'Monthly Installment: $' + priceDetails.monthlyInstallment + ' (' + installmentMonths + ' months)';
 }
-function validateForm(event) {
-    event.preventDefault(); // Prevent form submission
-  
-    var form = document.getElementById('carForm');
+
+function validateForm() {
     var countryInput = document.getElementById('country');
     var cityInput = document.getElementById('city');
     var stateInput = document.getElementById('state');
@@ -166,23 +160,28 @@ function validateForm(event) {
       return false;
     }
   
-    
-    form.submit();
-  }
-  
-  function getSelectedRadioValue(radioButtons) {
+    return true;
+}
+
+function getSelectedRadioValue(radioButtons) {
     for (var i = 0; i < radioButtons.length; i++) {
       if (radioButtons[i].checked) {
         return radioButtons[i].value;
       }
     }
     return null;
-  }
-  
-  function toggleInstallmentOptions(show) {
-    var installmentOptions = document.getElementById('installmentOptions');
-    installmentOptions.style.display = show ? 'block' : 'none';
-  }
-  
-  var form = document.getElementById('carForm');
-  form.addEventListener('submit', validateForm);
+}
+
+function redirectToPaymentInfo() {
+    if (validateForm()) {
+      window.location.href = "paymentinfo.html";
+    }
+}
+
+var form = document.getElementById('carForm');
+form.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+    validateForm();
+});
+
+document.getElementById("payNowButton").addEventListener("click", redirectToPaymentInfo);
