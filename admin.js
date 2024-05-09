@@ -94,5 +94,10 @@ document.getElementById('userForm').addEventListener('submit', function(event) {
   }
 });
 
+document.getElementById('adjustProductsBtn').addEventListener('click', function() {
+  window.location.href = "adminproductslast.html";
+});
+
+
 // Display initial users
 displayUsers();
