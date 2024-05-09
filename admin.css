@@ -149,3 +149,18 @@ th {
 .actionButton:active {
   background-color: #3e8e41;
 }
+#adjustProductsBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#adjustProductsBtn:hover {
+  background-color: #0056b3;
+}
