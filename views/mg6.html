@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honda Civic Page</title>
+    <link rel="stylesheet" href="car.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+          
+            <div class="buttons">
+                <button onclick="scrollToSection('info')">Info</button>
+                <button onclick="scrollToSection('details')">Details</button>
+                <button onclick="scrollToSection('gallery')">Gallery</button>
+                <button onclick="scrollToSection('purchase')">Purchase</button>
+            </div>
+        </div>
+    </header>
+    
+    <section id="info">
+        <div class="section-content">
+            <h1 class="info-title">MG 6</h1>
+            <img src="/img/mg-6-front-angle-low-view-952264.jpg" alt="MG 6">
+            <p class="info-description">Explore the MG 6.</p>
+        </div>
+    </section>
+    
+    <section id="details">
+        <div class="section-content">
+            <h2>Details and Specifications</h2>
+            <div class="table-container">
+                <h3>Engine & Power</h3>
+                <table>
+                    <tr>
+                        <th>Horsepower</th>
+                        <td>306 HP</td>
+                    </tr>
+                    <tr>
+                        <th>Cylinders</th>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <th>Transmission</th>
+                        <td>6-speed Manual</td>
+                    </tr>
+                    <tr>
+                        <th>CC</th>
+                        <td>1996</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="table-container">
+                <h3>Safety Features</h3>
+                <table>
+                    <tr>
+                        <th>Airbags</th>
+                        <td>6 (Front, Side, and Curtain)</td>
+                    </tr>
+                    <tr>
+                        <th>EBD</th>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <th>ABS</th>
+                        <td>Yes</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="table-container">
+                <h3>Measurements</h3>
+                <table>
+                    <tr>
+                        <th>Length</th>
+                        <td>182.3 inches</td>
+                    </tr>
+                    <tr>
+                        <th>Width</th>
+                        <td>70.9 inches</td>
+                    </tr>
+                    <tr>
+                        <th>Height</th>
+                        <td>55.7 inches</td>
+                    </tr>
+                    <tr>
+                        <th>Wheelbase</th>
+                        <td>106.3 inches</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section id="gallery">
+        <div class="section-content">
+            <div class="gallery-buttons">
+                <button onclick="showSection('interior')">Interior</button>
+                <button onclick="showSection('exterior')">Exterior</button>
+            </div>
+            <div id="interior" class="gallery-section" style="display: none;">
+              
+                <img src="/img/mg-6-gear-shifter-524805.jpg" alt="MG 6 Interior">
+                <img src="/img/mg-6-passengers-view-953987.jpg" alt="MG 6 Interior">
+                <img src="/img/mg-6-steering-wheel-972380.jpg" alt="MG 6 Interior">
+            </div>
+            <div id="exterior" class="gallery-section" style="display: none;">
+                
+                <img src="/img/mg-6-drivers-sideview-848332.jpg" alt="MG 6 Exterior">
+                <img src="/img/mg-6-full-front-view-826584.jpg" alt="MG 6 Exterior">
+                <img src="/img/mg-6-headlight-295572.jpg" alt="MG 6 Exterior">
+          </div>
+        
+        </div>
+    </section>
+    
+    <section id="purchase">
+        <div class="section-content">
+            <button onclick="showPopup('cash')">Pay by Cash</button>
+            <button onclick="showPopup('buy')">Buy Now</button>
+        </div>
+    </section>
+
+    <div id="cashPopup" class="popup">
+       
+        <p>Complete your purchase with cash. Contact us for further details.</p>
+    </div>
+
+    <div id="buyPopup" class="popup">
+       
+        <p>Enter your payment code.</p>
+    </div>
+
+    <script src="car.js"></script>
+</body>
+</html>
