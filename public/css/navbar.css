@@ -3,24 +3,36 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+    list-style: none;
+    text-decoration: none;
 }
 
 nav{
-    background-color: grey;
+    background-color: transparent;
+    background: white;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    padding: 15px;
+    padding: 15px 100px;
     position: fixed;
     width: 100%;
     height: 60px; /* Example height */
     top: 0;
     left: 0;
     z-index: 1000;
-
-
 }
 
+html::-webkit-scrollbar{
+    width: 0.5rem;
+}
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+html::-webkit-scrollbar-thumb{
+    background: red;
+    border-radius: 5rem;
+}
 .logo{
     font-size: 30px;
     font-weight: 900;
@@ -41,39 +53,58 @@ nav{
     font-weight: 800;
     transition: transform 0.3s ease;
 }
+.menubar a::after{
+    content:" ";
+    width: 100%;
+    height: 3px;
+    background: coral;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: 0.5s;
+}
 .menubar a:hover{
-    color: red; 
-    transform: scale(1.1);
+    width: 100%;
+    color: red;
+}
+#menu-icon{
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10001;
+    display: none;
 }
 .menubar i{
     font-size: 20px;
     align-items: center;
 }
-.search-container {
-    display: flex;
-}
-
-#search-input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px 0 0 4px;
-    outline: none;
-}
-
-#search-button {
-    background-color: #007BFF;
-    border: none;
-    padding: 10px;
-    border-radius: 0 4px 4px 0;
-    cursor: pointer;
-    display: flex;
+.about-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-top: 2rem;
     align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
 }
-
-#search-button i {
+.about-img img{
+    width: 100%;
+}
+.about-text span{
+    font-weight: 500;
+    color: orange;
+    text-transform: uppercase;
+}
+.about-text p{
+    margin: 0.5rem 0 1.4rem;
+}
+.about-text .btn{
+    padding: 10px 20px;
+    background: #474fa0;
     color: white;
+    border-radius: 0.5rem;
 }
-
+.about-text .btn:hover{
+    background-color: orange;
+}
 .home{
     max-width: 1600px;
     margin: auto;
@@ -81,7 +112,7 @@ nav{
     min-height: 640px;
     display: flex;
     align-items: center;
-    background-image: url('/img/background home2.jpg');
+    background-image: url('/public/img/porsche_cayenne.jpg');
     background-repeat:no repeat;
     background-size: cover;
     background-position: center left;
@@ -93,7 +124,7 @@ nav{
     font-size: 2.4rem;
 }
 .hometex span{
-    color: red;
+    color: blue;
 }
 .hometex p{
     font-size: 0.938rem;
@@ -101,12 +132,13 @@ nav{
     margin: 0.5rem 0 1,2rem;
 }
 .btn{
-    padding: 10px 22px ;
-    background-color:red ;
-    color:white;
-    font-weight: 400;
-    display: block;
-    width: 145px;
+    padding: 5px 20px;
+    background: #474fa0;
+    color: white;
+    border-radius: 0.3rem;
+}
+.btn:hover{
+    background-color: orange;
 }
 .heading{
     text-align: center;
@@ -126,7 +158,7 @@ nav{
 
 .footer{
     background-color: #24262b;
-    padding: 70px 0;
+    padding: 40px 0;
 }
 .footer-col{
     width: 25%;
@@ -271,7 +303,7 @@ nav{
          color: rgb(128, 128, 128);
     }
 .a{
-    color:black;
+    color:Black;
     text-decoration:underline;
 }
 }
