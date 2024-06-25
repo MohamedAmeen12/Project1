@@ -2,23 +2,6 @@ import mongoose from "mongoose";
 import validator from "validator";
 import bcrypt from "bcrypt";
 
-const cartItemSchema = new mongoose.Schema(
-  {
-    carId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Car",
-      required: true,
-    },
-    quantity: {
-      type: Number,
-      required: true,
-      min: 1,
-      default: 1,
-    },
-  },
-  { _id: false }
-);
-
 const userSchema = new mongoose.Schema(
   {
     role: {
@@ -50,7 +33,29 @@ const userSchema = new mongoose.Schema(
       unique: true,
       required: [true, "Email address is required"],
     },
-    cart: [cartItemSchema],
+    purchases: [
+      {
+        country: {
+          type: String,
+        },
+        city: {
+          type: String,
+        },
+        streetAddress: {
+          type: String,
+        },
+        carId: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "Car",
+          required: true,
+        },
+        purchaseType: {
+          type: String,
+          enum: ["cash", "installments"],
+          required: true,
+        },
+      },
+    ],
   },
   {
     timestamps: true,
@@ -70,10 +75,6 @@ userSchema.pre("save", async function (next) {
     next(error);
   }
 });
-
-userSchema.methods.comparePassword = async function (password) {
-  return await bcrypt.compare(password, this.password);
-};
 
 const User = mongoose.model("User", userSchema);
 
