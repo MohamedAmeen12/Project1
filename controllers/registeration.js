@@ -3,11 +3,12 @@
 import User from "../../models/User.js";
 import jwt from "jsonwebtoken";
 import secrets from "../../config/secrets.js";
+import bcrypt from "bcrypt"
 
-const {jwt_secret_phrase} = secrets;
+const { jwt_secret_phrase } = secrets;
 
 export const signIn_get = async (req, res) => {
-  res.render("registration/signIn");
+  res.render("registration/signin");
 };
 
 export const signIn_post = async (req, res) => {
@@ -16,7 +17,12 @@ export const signIn_post = async (req, res) => {
   try {
     const founduser = await User.findOne({ username });
 
-    if (!founduser || !founduser.comparePassword(password, founduser.password))
+    if (!founduser)
+      return res.status(401).json({ errMsg: "Wrong username or password" });
+
+    const isValid = await bcrypt.compare(password, founduser.password);
+    
+    if (!isValid)
       return res.status(401).json({ errMsg: "Wrong username or password" });
 
     const token = jwt.sign({ user: founduser }, jwt_secret_phrase, {
@@ -36,6 +42,7 @@ export const signIn_post = async (req, res) => {
 };
 
 
+
 -------------------signUp.js--------------
 import User from "../../models/User.js";
 
@@ -44,9 +51,10 @@ export const signUp_get = async (req, res) => {
 };
 
 export const signUp_post = async (req, res) => {
+
   let newUser;
   try {
-    const { firstName, lastName, username, password, email } = req.body;
+    const { name, username, password, email } = req.body;
 
     if (await User.findOne({ email }))
       return res.status(409).json({ errMsg: "Email is Taken" });
@@ -55,8 +63,7 @@ export const signUp_post = async (req, res) => {
       return res.status(409).json({ errMsg: "Username is Taken" });
 
     newUser = new User({
-      firstName,
-      lastName,
+      name,
       username,
       password,
       email,
