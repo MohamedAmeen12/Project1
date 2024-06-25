@@ -308,3 +308,40 @@
               return imageUrl;
             })
           );
+carData.images = imageUrls;
+
+          fetch("/cars/<%=car._id %>", {
+            method: "put",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(carData),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              console.log(data);
+              if (data.errMsg) showMsg(data.errMsg, "red");
+              else {
+                showMsg("Car updated successfully", "green");
+                setTimeout(() => {
+                  setTimeout(function () {
+                    location.href = "/admin/<%= user._id%>/cars";
+                  }, 2000);
+                });
+              }
+            })
+            .catch((error) => {
+              showMsg("Error: " + error, "red");
+            });
+        });
+
+      async function uploadImage(imageFile) {
+        const formData = new FormData();
+        formData.append("image", imageFile);
+
+        const response = await fetch("/cars/upload", {
+          method: "POST",
+          body: formData,
+        });
+
+        const data = await response.json();
+        return data.imageUrl;
+      }
