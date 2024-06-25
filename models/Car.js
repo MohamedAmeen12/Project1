@@ -7,6 +7,11 @@ const carSchema = mongoose.Schema(
       required: true,
       trim: true,
     },
+    description: {
+      type: String,
+      required: true,
+      trim: true,
+    },
     model: {
       type: String,
       required: true,
@@ -78,6 +83,11 @@ const carSchema = mongoose.Schema(
       required: true,
       min: 0,
     },
+    images: [
+      {
+        type: String,
+      },
+    ],
   },
   {
     timestamps: true,
